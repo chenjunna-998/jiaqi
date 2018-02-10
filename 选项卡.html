@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        button{
+            padding: 5px;
+        }
+        div{
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #FF0000;
+        }
+        span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <button style="background: #FFFF00;">天后</button>
+        <button>小幸运</button>
+        <button>在人间</button>
+        <div>
+            <span style="display:block;">我嫉妒你的爱，气势如虹</span>
+            <span>原来你是我最想留住的幸运</span>
+            <span>也许争不过天与地，也许低下头会哭泣</span>
+        </div>
+</body>
+<script>
+    var btn=document.getElementsByTagName("button");
+    var sp=document.getElementsByTagName("span");
+    for(var i=0;i<btn.length;i++){
+        btn[i].index=i;
+        btn[i].onclick=function(){
+            for(var j=0;j<sp.length;j++){
+                btn[j].style.background="";
+                sp[j].style.display="none";
+            }
+            sp[this.index].style.display="block";
+            btn[this.index].style.backgroundColor="#FFFF00";
+        }
+       
+    }
+</script>
+</html>

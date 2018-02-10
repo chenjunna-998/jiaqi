@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px" cellspacing="0">
+        <tr>
+            <th colspan="6">心情购物车</th>
+        </tr>
+        <tr>
+            <td><button id="q">全选</button></td>
+            <td>名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>开心</td>
+            <td>196</td>
+            <td>
+                <button class="jian">-</button>
+                <span>1</span>
+                <button class="jia">+</button>
+            </td>
+            <td><button class="del">删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>郁闷</td>
+            <td>19</td>
+            <td>
+                <button class="jian">-</button>
+                <span>1</span>
+                <button class="jia">+</button>
+            </td>
+            <td><button class="del">删除</button></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>忧伤</td>
+            <td>95</td>
+            <td>
+                <button class="jian">-</button>
+                <span>1</span>
+                <button class="jia">+</button>
+            </td>
+            <td><button class="del">删除</button></td>
+        </tr>
+    </table>
+    总价格为：<span onclick="zj()"></span>￥
+</body>
+<script>
+    var otbl=document.getElementsByTagName("tbody")[0];
+    console.log(otbl)
+    var jian=document.getElementsByClassName("jian");
+    console.log(jian)
+    var jia=document.getElementsByClassName("jia");
+    console.log(jia)
+    var del=document.getElementsByClassName("del");
+    console.log(del)
+    var ipt=document.getElementsByTagName("input");
+    console.log(ipt)
+    var q=document.getElementById("q");
+    console.log(q)
+
+    //全选
+    q.onclick=function(){
+        for(var i=0;i<ipt.length;i++){
+            if(ipt[i].checked==false){
+                ipt[i].checked=true;
+            }else{
+                ipt[i].checked=false;
+            }
+        }
+    }
+    //删除
+    for(var i=0;i<del.length;i++){
+        del[i].onclick=function(){
+            otbl.removeChild(this.parentNode.parentNode);
+            // console.log(otbl.childNodes)
+            // console.log(otbl.firstChild)
+            // console.log(this.parentNode)
+        }
+    }
+    //加运算
+    for(var i=0;i<jia.length;i++){
+        jia[i].onclick=function(){
+            parseInt(this.previousElementSibling.innerHTML)+=1;
+            
+        }
+    }
+
+</script>
+</html>

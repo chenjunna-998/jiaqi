@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>找出包含A或a的数量</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr=["The human nature","The sun","happy","China","Appreciate"];
+    var arr1=[];
+    
+    //方法一
+    // for(var i=0;i<arr.length;i++){
+    //     // document.write(arr[i]+"<br/>")
+    //     if(arr[i].indexOf("a")!=-1 || arr[i].indexOf("A")!=-1){
+    //         arr1.push(arr[i])
+    //     }
+    // }
+    // console.log(arr1)
+    // document.write(arr1.length)
+
+    //方法二
+    var st=["asdf","Asfsfwea","32s32af1w3er1a"];
+    var num=0;
+    for(s in st)
+    num+=st[s].match(/a/g).length;
+    alert("数组st中a的数量" + num);
+
+    // var b="akudhnksaaaaaufnlusefc";
+    // console.log(b.match(/a/g).length)//6
+</script>
+</html>
